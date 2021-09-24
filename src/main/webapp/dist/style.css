@@ -1,0 +1,194 @@
+header {
+  background-color: #250025;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  color: white;
+}
+
+.content, .header_content {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header_content div {
+  padding: 5px 5px;
+  display: inline-block;
+  font-size: 23px;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.form_area {
+  margin: 70px 10px 20px;
+  padding: 30px 20px;
+}
+
+#x-input {
+  width: 85%;
+  height: 2em;
+  outline: none;
+  padding: 3px 10px;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+}
+#x-input:focus {
+  border-color: #250025;
+}
+
+#selected-y-cord {
+  display: inline-block;
+  width: 60px;
+  height: 1.5em;
+  border: 2px solid black;
+  text-align: center;
+  margin-right: 3px;
+}
+
+#buttons-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#buttons-area button {
+  color: white;
+  cursor: pointer;
+  min-width: 30px;
+  min-height: 20px;
+  margin: 3px;
+  background-color: #250025;
+  border: 2px solid #250025;
+  font-size: 1.2em;
+}
+#buttons-area button:hover {
+  background-color: white;
+  color: #250025;
+  transition: background-color 0.2s ease;
+}
+#buttons-area button:active {
+  background-color: #beb3be;
+}
+
+input[type=radio][name=radius] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+input[type=radio][name=radius] + label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: background-color 0.25s ease;
+}
+input[type=radio][name=radius] + label:hover {
+  background-color: #f4f2f4;
+}
+input[type=radio][name=radius] + label::before {
+  display: flex;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  box-shadow: inset 0 0 0 0.125em #250025;
+  transition: 0.25s ease;
+}
+input[type=radio][name=radius]:checked + label {
+  background-color: #dcd6dc;
+}
+input[type=radio][name=radius]:checked + label:before {
+  box-shadow: inset 0 0 0 0.4375em #250025;
+}
+
+#graphic {
+  padding: 5px;
+  border: #25c896 solid 5px;
+  border-radius: 15px;
+}
+
+#graph-td {
+  text-align: right;
+}
+
+#form-table {
+  width: 100%;
+}
+
+.results {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+}
+.results th {
+  background-color: #fcf969;
+  text-shadow: grey 2px 2px;
+  padding: 5px 10px;
+}
+.results th:first-child {
+  border-top-left-radius: 15px;
+}
+.results th:last-child {
+  border-top-right-radius: 15px;
+}
+.results td {
+  padding: 5px 10px;
+  background-color: #25c896;
+}
+.results tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+.results tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+#check-btn {
+  cursor: pointer;
+  border: 3px solid #250025;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+#check-btn:hover {
+  background-color: #ededed;
+}
+#check-btn:active {
+  background-color: #d2d2d2;
+}
+
+.error-message {
+  background-color: red;
+  padding: 2px 5px;
+  width: 83%;
+}
+
+#x-input.not-valid {
+  box-shadow: inset 0 0 7px 2px red;
+  border-color: red;
+}
+
+.hidden {
+  display: none;
+}
