@@ -23,7 +23,7 @@
         <form method="GET" action="${pageContext.request.contextPath}/main-page">
             <table id="form-table">
                 <tr>
-                    <td><label>X coordinate: </label></td>
+                    <td><label>X координата: </label></td>
                     <td>
                         <input type="text" id="x-input" name="xCord" placeholder="Введите число от -5 до 3">
 
@@ -306,7 +306,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Y coordinate: </label></td>
+                    <td><label>Y координата: </label></td>
                     <td>
                         <div id="buttons-area">
                             <input type="hidden" name="yCord" id="y-input">
@@ -324,7 +324,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Radius: </label></td>
+                    <td><label>Радиус: </label></td>
                     <td>
                         <div id="radius-input">
                             <input type="radio" name="radius" id="r1" value="1">

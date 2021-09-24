@@ -42,8 +42,8 @@ function checkHit(event) {
     }
     $('#point-unable').addClass('hidden');
 
-    let x = ((event.pageX - $('#graphic').offset().left - 10 - 140) / 20).toFixed(2);
-    let y = ((event.pageY - $('#graphic').offset().top - 10 - 140) / 20).toFixed(2);
+    let x = ((event.pageX - $('#graphic').offset().left - 10 - 140) / 40).toFixed(2);
+    let y = ((140 - (event.pageY - $('#graphic').offset().top - 10)) / 40).toFixed(2);
 
     $('#x-input').attr("value", x);
     $('#selected-y-cord').html(y);

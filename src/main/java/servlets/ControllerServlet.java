@@ -10,8 +10,9 @@ public class ControllerServlet extends HttpServlet {
         String x = request.getParameter("xCord");
         String y = request.getParameter("yCord");
         String r = request.getParameter("radius");
+        String timeOffset = request.getParameter("time-offset");
 
-        System.out.println("X: " + x + "\nY: " + y + "\nR: " + r);
+        System.out.println("X: " + x + "\nY: " + y + "\nR: " + r + "\ntime-offset: " + timeOffset);
 
         RequestDispatcher dispatcher;
         if (x != null && y != null && r != null) {
