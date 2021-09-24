@@ -1,36 +1,34 @@
 package utils;
 
-import java.io.Serializable;
-
-public class Data implements Serializable {
-    private String x;
-    private String y;
-    private String radius;
+public class Data {
+    private double x;
+    private double y;
+    private double radius;
     private String currentTime;
     private String duration;
     private String result;
 
-    public String getX() {
+    public double getX() {
         return x;
     }
 
-    public void setX(String x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public String getY() {
+    public double getY() {
         return y;
     }
 
-    public void setY(String y) {
+    public void setY(double y) {
         this.y = y;
     }
 
-    public String getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public void setRadius(String radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 

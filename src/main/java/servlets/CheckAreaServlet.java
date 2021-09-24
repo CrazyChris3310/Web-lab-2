@@ -1,7 +1,7 @@
 package servlets;
 
-import com.google.gson.Gson;
 import utils.Data;
+import utils.HistoryBean;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
 
 public class CheckAreaServlet extends HttpServlet {
     @Override
@@ -79,6 +80,28 @@ public class CheckAreaServlet extends HttpServlet {
         pw.write("</body></html>");
 
         pw.close();
+
+        HistoryBean hb = (HistoryBean) request.getSession().getAttribute("historyBean");
+
+        System.out.println(hb);
+        if (hb == null) {
+            hb = new HistoryBean();
+            hb.setHistory(new LinkedList<>());
+            request.getSession().setAttribute("histroyBean", hb);
+        }
+        System.out.println(hb);
+        System.out.println(hb.getHistory().size());
+
+        Data data = new Data();
+        data.setX(x);
+        data.setY(y);
+        data.setRadius(r);
+        data.setDuration(time + " мкс");
+        data.setCurrentTime(date);
+        data.setResult(result);
+
+        hb.add(data);
+
     }
 
     private boolean checkValues(double x, double y, double r) {

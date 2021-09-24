@@ -12,8 +12,6 @@ public class ControllerServlet extends HttpServlet {
         String r = request.getParameter("radius");
         String timeOffset = request.getParameter("time-offset");
 
-        System.out.println("X: " + x + "\nY: " + y + "\nR: " + r + "\ntime-offset: " + timeOffset);
-
         RequestDispatcher dispatcher;
         if (x != null && y != null && r != null) {
             dispatcher = request.getRequestDispatcher("/area-check");

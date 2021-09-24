@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -357,9 +358,10 @@
         </form>
     </div>
 
+    <jsp:useBean id="historyBean" class="utils.HistoryBean" scope="session"/>
 
     <div id="results-table-area">
-        <table class="results hidden">
+        <table class="results">
             <tr>
                 <th>X координата</th>
                 <th>Y координата</th>
@@ -368,22 +370,18 @@
                 <th>Время выполнения скрипта</th>
                 <th>Попадание</th>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>3</td>
-                <td>1</td>
-                <td>4213</td>
-                <td>324234</td>
-                <td>2no</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>3</td>
-                <td>1</td>
-                <td>4213</td>
-                <td>324234</td>
-                <td>2no</td>
-            </tr>
+
+            <c:forEach items="${historyBean.history}" var="element">
+                <tr>
+                    <td>${element.x}</td>
+                    <td>${element.y}</td>
+                    <td>${element.radius}</td>
+                    <td>${element.currentTime}</td>
+                    <td>${element.duration}</td>
+                    <td>${element.result}</td>
+                </tr>
+            </c:forEach>
+
         </table>
     </div>
 </div>
