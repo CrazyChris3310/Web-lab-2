@@ -22,8 +22,8 @@ public class HistoryBean implements Serializable {
         history.push(element);
     }
 
-    public Data get(int index) {
-        return history.get(index);
+    public Data getPrevious() {
+        return history.peekFirst();
     }
 
 }

@@ -1,15 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lab 2</title>
     <link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
+
+<jsp:useBean id="historyBean" class="utils.HistoryBean" scope="session"/>
 
 <header>
     <div class="header_content">
@@ -30,7 +32,6 @@
 
                     </td>
                     <td id="graph-td" rowspan="4">
-                        <!-- TODO: add opportunity to click on graph -->
                         <svg
                                 id="graphic"
                                 viewBox="0 0 280 280"
@@ -302,7 +303,7 @@
                                     id="graph-path"
                             />
 
-                            <circle class="hidden" cx="25" cy="75" r="5" fill="red" />
+                            <circle <%= historyBean.getHistory().size() == 0 ? "class=\"hidden\"" : "" %> cx="${historyBean.previous.x * 40 + 140}" cy="${historyBean.previous.y * -40 + 140}" r="5" fill="red" />
                         </svg>
                     </td>
                 </tr>
@@ -358,10 +359,8 @@
         </form>
     </div>
 
-    <jsp:useBean id="historyBean" class="utils.HistoryBean" scope="session"/>
-
     <div id="results-table-area">
-        <table class="results">
+        <table class="results ${historyBean.history.size() == 0 ? "hidden" : ""}">
             <tr>
                 <th>X координата</th>
                 <th>Y координата</th>

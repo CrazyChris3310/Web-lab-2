@@ -1,6 +1,8 @@
 package utils;
 
-public class Data {
+import java.io.Serializable;
+
+public class Data implements Serializable {
     private double x;
     private double y;
     private double radius;
