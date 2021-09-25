@@ -83,14 +83,11 @@ public class CheckAreaServlet extends HttpServlet {
 
         HistoryBean hb = (HistoryBean) request.getSession().getAttribute("historyBean");
 
-        System.out.println(hb);
         if (hb == null) {
             hb = new HistoryBean();
             hb.setHistory(new LinkedList<>());
             request.getSession().setAttribute("histroyBean", hb);
         }
-        System.out.println(hb);
-        System.out.println(hb.getHistory().size());
 
         Data data = new Data();
         data.setX(x);
