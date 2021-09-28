@@ -75,7 +75,7 @@ public class CheckAreaServlet extends HttpServlet {
         pw.write("</tr>");
         pw.write("</table>");
         pw.write("</div>");
-        pw.write("<a href=\"/main-page\">Назад</a>");
+        pw.write("<a href=\"" + request.getContextPath() + "/main-page\">Назад</a>");
 
         pw.write("</body></html>");
 

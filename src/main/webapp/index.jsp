@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 2</title>
     <link rel="stylesheet" href="dist/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -315,8 +316,8 @@
                             <div id="selected-y-cord"></div>
                             <button type="button" value="-4">-4</button>
                             <button type="button" value="-3">-3</button>
-                            <button type="button" value="2">-2</button>
-                            <button type="button" value="1">-1</button>
+                            <button type="button" value="-2">-2</button>
+                            <button type="button" value="-1">-1</button>
                             <button type="button" value="0">0</button>
                             <button type="button" value="1">1</button>
                             <button type="button" value="2">2</button>
