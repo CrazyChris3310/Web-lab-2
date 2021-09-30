@@ -1,3 +1,4 @@
+<%@ page import="java.io.PrintWriter" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -304,7 +305,11 @@
                                     id="graph-path"
                             />
 
-                            <circle <%= historyBean.getHistory().size() == 0 ? "class=\"hidden\"" : "" %> cx="${historyBean.previous.x * 40 + 140}" cy="${historyBean.previous.y * -40 + 140}" r="5" fill="red" />
+                            <c:forEach var="element" items="${historyBean.history}">
+                                <circle cx="${element.x * 40 + 140}" cy="${element.y * -40 + 140}" r="5" fill="${element == historyBean.previous ? "red" : "grey"}"></circle>
+                            </c:forEach>
+                            <circle cx="${historyBean.previous.x * 40 + 140}" cy="${historyBean.previous.y * -40 + 140}" r="5" fill="red"></circle>
+
                         </svg>
                     </td>
                 </tr>

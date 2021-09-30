@@ -21,7 +21,7 @@ public class CheckAreaServlet extends HttpServlet {
 
         String timeOffset = request.getParameter("time-offset");
         String date = ZonedDateTime.of(LocalDateTime.now(), ZoneId.of(timeOffset)).format(
-                DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss"));
+                DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
 
         double x;
         double y;
