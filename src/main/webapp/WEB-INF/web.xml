@@ -23,6 +23,15 @@
         <url-pattern>/area-check</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>TimeFilter</filter-name>
+        <filter-class>filters.TimeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>TimeFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <error-page>
         <location>/error-pages/422.jsp</location>
     </error-page>

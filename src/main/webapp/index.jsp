@@ -1,6 +1,7 @@
-<%@ page import="java.io.PrintWriter" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="utils.Data" %>
+<%@ page import="java.util.Locale" %>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -299,16 +300,28 @@
                       L 140 140"
                                     stroke="black"
                                     stroke-width="2"
-                                    fill="green"
+                                    fill="blue"
                                     fill-opacity="0.5"
                                     class="hidden"
                                     id="graph-path"
                             />
 
-                            <c:forEach var="element" items="${historyBean.history}">
-                                <circle cx="${element.x * 40 + 140}" cy="${element.y * -40 + 140}" r="5" fill="${element == historyBean.previous ? "red" : "grey"}"></circle>
-                            </c:forEach>
-                            <circle cx="${historyBean.previous.x * 40 + 140}" cy="${historyBean.previous.y * -40 + 140}" r="5" fill="red"></circle>
+                            <%
+                                for (int i = historyBean.getHistory().size() - 1; i >= 0; --i) {
+                                    Data element = historyBean.getHistory().get(i);
+                                    double x = element.getX() * 40 + 140;
+                                    double y = element.getY() * -40 + 140;
+                                    String color;
+                                    if (element == historyBean.getPrevious())
+                                        color = element.getResult().equalsIgnoreCase("да") ? "green" : "red";
+                                    else
+                                        color = "grey";
+
+                                    String circle = String.format("<circle cx=\"%s\" cy=\"%s\" r=\"5\" fill=\"%s\"></circle>",
+                                            x, y, color);
+                                    out.println(circle);
+                                }
+                            %>
 
                         </svg>
                     </td>
