@@ -7,9 +7,7 @@ import java.io.IOException;
 public class TimeFilter implements Filter {
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("Filter has started");
-    }
+    public void init(FilterConfig filterConfig) throws ServletException { }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -18,4 +16,7 @@ public class TimeFilter implements Filter {
         long duration = (System.nanoTime() - start) / 1000;
         System.out.println(duration + " мкс");
     }
+
+    @Override
+    public void destroy() { }
 }
